@@ -1,0 +1,14 @@
+//
+// Created by User on 14/11/2023.
+//
+
+#ifndef OBLIGATORIO2023AMS_CAPALOGICA_H
+#define OBLIGATORIO2023AMS_CAPALOGICA_H
+
+
+class CapaLogica {
+
+};
+
+
+#endif //OBLIGATORIO2023AMS_CAPALOGICA_H

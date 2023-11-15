@@ -1,0 +1,14 @@
+//
+// Created by User on 14/11/2023.
+//
+
+#ifndef OBLIGATORIO2023AMS_HECHIZO_H
+#define OBLIGATORIO2023AMS_HECHIZO_H
+
+
+class Hechizo {
+
+};
+
+
+#endif //OBLIGATORIO2023AMS_HECHIZO_H
