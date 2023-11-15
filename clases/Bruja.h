@@ -6,8 +6,36 @@
 #define OBLIGATORIO2023AMS_BRUJA_H
 
 
-class Bruja {
+#include "../datos/String.h"
+#include "../colecciones/HechizosAprendidos.h"
+#include "Hechizo.h"
+#include "../colecciones/Iterador.h"
+#include "../enums/TipoBruja.h"
 
+class Bruja {
+    private:
+        String identificador;
+        String nombre;
+        HechizosAprendidos hechizosAprendidos;
+
+    public:
+        Bruja(String ident, String nom);
+
+        String getIdentificador();
+
+        String getNombre();
+
+        void setNombre(String nom);
+
+        void insertarHechizo(Hechizo hech);
+
+        Iterador listarHechizosAprendidos();
+
+        virtual TipoBruja getTipo() = 0;
+
+        virtual int calcularPuntosDePoder() = 0;
+
+        virtual ~Bruja();
 };
 
 
