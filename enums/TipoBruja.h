@@ -1,14 +1,8 @@
-//
-// Created by User on 14/11/2023.
-//
-
 #ifndef OBLIGATORIO2023AMS_TIPOBRUJA_H
 #define OBLIGATORIO2023AMS_TIPOBRUJA_H
 
 
-class TipoBruja {
-
-};
+enum class TipoBruja { SUPREMA,ESPECIAL};
 
 
-#endif //OBLIGATORIO2023AMS_TIPOBRUJA_H
+#endif

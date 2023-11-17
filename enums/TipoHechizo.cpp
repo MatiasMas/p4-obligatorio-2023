@@ -1,0 +1,1 @@
+#include "TipoHechizo.h"

@@ -1,14 +1,33 @@
-//
-// Created by User on 14/11/2023.
-//
-
 #ifndef OBLIGATORIO2023AMS_SUPREMA_H
 #define OBLIGATORIO2023AMS_SUPREMA_H
 
+#include "../datos/Fecha.h"
+#include "Bruja.h"
 
-class Suprema {
+class Suprema : public Bruja
+{
+
+private:
+    Fecha fechaNacimiento;
+    int cantidadPoderes;
+
+public:
+    Suprema(String ident, String nom, Fecha fecNac, int cantPoderes);
+
+    void setFechaNacimiento(Fecha fec);
+
+    Fecha getFechaNacimiento();
+
+    void setCantidadPoderes(int cantPoderes);
+
+    int getCantidadPoderes();
+
+    TipoBruja getTipo();
+
+    ~Suprema();
+
 
 };
 
 
-#endif //OBLIGATORIO2023AMS_SUPREMA_H
+#endif
