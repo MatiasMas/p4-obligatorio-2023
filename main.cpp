@@ -21,7 +21,7 @@ void pruebaAltaBurjaSuprema(){
     }
 
     //prueba de que no me deja ingresarla con el mismo identificador en el arbol
-     fachada.altaBrujaSuprema(sup,error);
+     fachada.altaBrujaSuprema(sup2,error);
 
      if(error == BRUJA_SUPREMA_YA_EXISTE){
             printf("\nla burja ya existe");
