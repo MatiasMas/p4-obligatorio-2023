@@ -5,34 +5,52 @@
 #include "HechizosAprendidos.h"
 
 HechizosAprendidos::HechizosAprendidos() {
-//    hechizos.arre = [CANT];
     hechizos.tope = 0;
 }
 
-void HechizosAprendidos::insBack(Hechizo hech) {
+void HechizosAprendidos::insBack(Hechizo *hech) {
+    int pos = hechizos.tope;
 
+    hech->setNumero(pos + 1);
+    hechizos.arre[pos] = hech;
+    
+    hechizos.tope++;
 }
 
 bool HechizosAprendidos::esVacia() {
-    return false;
+    return hechizos.tope == 0;
 }
 
 int HechizosAprendidos::largoHechizos() {
-    return 0;
+    return hechizos.tope;
 }
 
 bool HechizosAprendidos::estaLleno() {
-    return false;
+    return hechizos.tope == CANT;
 }
 
-//Hechizo HechizosAprendidos::ksimo() {
-//    return Hechizo(0, String());
-//}
+Hechizo* HechizosAprendidos::ksimo(int k) {
+    return hechizos.arre[k];
+}
 
-void HechizosAprendidos::listarHechizos(Iterador &iter) {
+Iterador* HechizosAprendidos::listarHechizos() {
+    Iterador* iterador = new Iterador();
 
+    for (int i = 0; i < hechizos.tope; ++i) {
+        iterador->insertar(hechizos.arre[i]);
+    }
+
+    return iterador;
 }
 
 bool HechizosAprendidos::existeHechizo(int hechizoNum) {
-    return false;
+    bool existe = false;
+
+    if (!esVacia()){
+        if (hechizos.tope > hechizoNum && hechizoNum >= 0){
+            existe = true;
+        }
+    }
+
+    return existe;
 }

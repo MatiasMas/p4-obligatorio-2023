@@ -9,7 +9,7 @@ const int CANT = 20;
 class HechizosAprendidos {
     private:
         struct Hechizos {
-            Hechizo arre[CANT];
+            Hechizo *arre[CANT];
             int tope;
         };
         Hechizos hechizos;
@@ -17,7 +17,7 @@ class HechizosAprendidos {
     public:
         HechizosAprendidos();
 
-        void insBack(Hechizo hech);
+        void insBack(Hechizo *hech);
 
         bool esVacia();
 
@@ -25,9 +25,9 @@ class HechizosAprendidos {
 
         bool estaLleno();
 
-        Hechizo ksimo();
+        Hechizo* ksimo(int k);
 
-        void listarHechizos(Iterador &iter);
+        Iterador* listarHechizos();
 
         bool existeHechizo(int hechizoNum);
 };

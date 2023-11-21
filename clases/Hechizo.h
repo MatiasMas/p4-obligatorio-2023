@@ -11,7 +11,7 @@ class Hechizo : public Objeto {
         String texto;
 
     public:
-        Hechizo(int num, String txt);
+        Hechizo(String txt);
 
         void setNumero(int num);
 

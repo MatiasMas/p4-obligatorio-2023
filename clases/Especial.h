@@ -10,7 +10,7 @@ private:
     String descripcion;
 
 public:
-    Especial(int num,String txt, int anio, String desc);
+    Especial(String txt, int anio, String desc);
 
     void setAnioManifesto(int anio);
 
