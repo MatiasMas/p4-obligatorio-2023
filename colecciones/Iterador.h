@@ -22,6 +22,7 @@ class Iterador {
         bool hayMasObjetos();
 
         Objeto *proximoObjeto();
+
         ~Iterador();
 };
 

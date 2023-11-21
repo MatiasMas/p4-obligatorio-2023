@@ -4,29 +4,25 @@
 #include "../datos/Fecha.h"
 #include "Bruja.h"
 
-class Suprema : public Bruja
-{
+class Suprema : public Bruja {
+    private:
+        Fecha fechaNacimiento;
+        int cantidadPoderes;
 
-private:
-    Fecha fechaNacimiento;
-    int cantidadPoderes;
+    public:
+        Suprema(String ident, String nom, Fecha fecNac, int cantPoderes);
 
-public:
-    Suprema(String ident, String nom, Fecha fecNac, int cantPoderes);
+        void setFechaNacimiento(Fecha fec);
 
-    void setFechaNacimiento(Fecha fec);
+        Fecha getFechaNacimiento();
 
-    Fecha getFechaNacimiento();
+        void setCantidadPoderes(int cantPoderes);
 
-    void setCantidadPoderes(int cantPoderes);
+        int getCantidadPoderes();
 
-    int getCantidadPoderes();
+        TipoBruja getTipo();
 
-    TipoBruja getTipo();
-
-    ~Suprema();
-
-
+        ~Suprema();
 };
 
 

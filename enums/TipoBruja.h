@@ -2,7 +2,10 @@
 #define OBLIGATORIO2023AMS_TIPOBRUJA_H
 
 
-enum class TipoBruja { SUPREMA,ESPECIAL};
+enum class TipoBruja : int {
+    SUPREMA,
+    ESPECIAL
+};
 
 
 #endif

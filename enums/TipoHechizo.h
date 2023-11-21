@@ -2,6 +2,9 @@
 #define TIPOHECHIZO_H
 
 
-enum class TipoHechizo {HECHIZO,ESPECIAL};
+enum class TipoHechizo : int {
+    HECHIZO,
+    ESPECIAL
+};
 
 #endif

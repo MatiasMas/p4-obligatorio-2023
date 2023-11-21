@@ -12,7 +12,7 @@
 #include "../colecciones/Iterador.h"
 #include "../enums/TipoBruja.h"
 
-class Bruja {
+class Bruja : public Objeto {
     private:
         String identificador;
         String nombre;
