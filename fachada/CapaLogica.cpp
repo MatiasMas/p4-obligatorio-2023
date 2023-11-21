@@ -1,7 +1,7 @@
 #include "CapaLogica.h"
 
 
-void CapaLogica :: altaBrujaSuprema (Suprema * sup, TipoError &error)
+void CapaLogica :: registrarBrujaSuprema (Suprema * sup, TipoError &error)
 {
     error = TipoError::SIN_ERROR;
     String ident = sup->getIdentificador();

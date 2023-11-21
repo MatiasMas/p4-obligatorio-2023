@@ -12,7 +12,7 @@ void pruebaAltaBurjaSuprema(){
      Suprema *sup = new Suprema("1","nom",Fecha(),3);
      Suprema *sup2 = new Suprema("1","nom",Fecha(),3);
 
-     fachada.altaBrujaSuprema(sup,error);
+     fachada.registrarBrujaSuprema(sup,error);
 
     if(error == BRUJA_SUPREMA_YA_EXISTE){
             printf("\nla burja ya existe");
@@ -21,7 +21,7 @@ void pruebaAltaBurjaSuprema(){
     }
 
     //prueba de que no me deja ingresarla con el mismo identificador en el arbol
-     fachada.altaBrujaSuprema(sup2,error);
+     fachada.registrarBrujaSuprema(sup2,error);
 
      if(error == BRUJA_SUPREMA_YA_EXISTE){
             printf("\nla burja ya existe");
