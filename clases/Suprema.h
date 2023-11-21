@@ -20,6 +20,8 @@ class Suprema : public Bruja {
 
         int getCantidadPoderes();
 
+        int calcularPuntosDePoder();
+
         TipoBruja getTipo();
 
         ~Suprema();

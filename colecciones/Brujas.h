@@ -3,6 +3,7 @@
 
 #include "../clases/Bruja.h"
 #include "../colecciones/Iterador.h"
+#include "stdio.h"
 
 class Brujas {
     private:
