@@ -42,7 +42,11 @@ int Comun::calcularPuntosDePoder() {
 
 String Comun::generarString() {
     String datos = Bruja::generarString();
-    String vuelaEnEscoba = vuelaEscoba ? "Si" : "No";
+    String vuelaEnEscoba;
+    if(vuelaEscoba)
+        vuelaEnEscoba = "Si";
+    else
+        vuelaEnEscoba = "No";
 
     datos = datos + ", Region Origen: " + regionOrigen + ", Vuela Escoba: " + vuelaEnEscoba + ", Maestra Suprema: " + suprema->generarString();
 

@@ -11,14 +11,14 @@ String::String() {
 }
 
 ///CONSTRUCTOR COMUN
-String::String(const char *cad) {
+String::String(char *cad) {
     int largo = strlen(cad);
     cadena = new char[largo + 1];
     strcpy(cadena, cad);
 }
 
 ///CONSTRUCTOR DE COPIA
-String::String(String &otro) {
+String::String(const String &otro) {
     int largo = strlen(otro.cadena);
     cadena = new char[largo + 1];
     strcpy(cadena, otro.cadena);
@@ -89,7 +89,7 @@ String String::convertirIntAString(int num) {
     std::string str = std::to_string(num);
     const char* cstr = str.c_str();
 
-    String numHechizoString = String(cstr);
+    String numHechizoString = String((char*)cstr);
 
     return numHechizoString;
 }
