@@ -46,6 +46,14 @@ void Brujas :: insert (Bruja * bruja)
     insertEnArbol (ABB, bruja);
 }
 
+
+void Brujas::insertBrujaComun(Comun *comun, String identSup)
+{
+    Bruja *sup = obtenerEnArbol(ABB, identSup);
+    comun->setSuprema((Suprema *)sup);
+    insertEnArbol (ABB, comun);
+}
+
 bool Brujas :: perteneceEnArbol (Nodo * a, String ident)
 {
     bool encontre = false;
@@ -59,10 +67,27 @@ bool Brujas :: perteneceEnArbol (Nodo * a, String ident)
     return encontre;
 }
 
+Bruja * Brujas::obtenerEnArbol (Nodo * a, String ident)
+{
+    while (!(ident == a->info->getIdentificador()))
+        if (ident < a->info->getIdentificador())
+            a = a->hizq;
+        else
+            a = a->hder;
+    return (a->info);
+}
+
+
 bool Brujas :: member (String ident)
 {
     return perteneceEnArbol(ABB, ident);
 }
+
+Bruja * Brujas :: find (String ident)
+{
+    return obtenerEnArbol (ABB, ident);
+}
+
 
 Brujas :: ~Brujas ()
 {

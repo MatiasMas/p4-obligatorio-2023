@@ -4,6 +4,7 @@
 #include "../clases/Bruja.h"
 #include "../colecciones/Iterador.h"
 #include "stdio.h"
+#include "../clases/Comun.h"
 
 class Brujas {
     private:
@@ -34,6 +35,8 @@ class Brujas {
         Bruja *find(String);
 
         void listarBrujas(Iterador &);
+
+        void insertBrujaComun(Comun *, String);
 
         ~Brujas();
 };

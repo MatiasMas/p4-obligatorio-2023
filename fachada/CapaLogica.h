@@ -3,6 +3,7 @@
 
 #include "../colecciones/Brujas.h"
 #include "../clases/Suprema.h"
+#include "../clases/Comun.h"
 #include "../enums/TipoError.h"
 
 class CapaLogica
@@ -15,7 +16,7 @@ public:
     //en varios lados muestra que en la fachada pasa los objetos, pero en al solucion del practio 4, ejercicio 5, lo pasa como puntero
     void registrarBrujaSuprema (Suprema *, TipoError &);
 
-//    void altaBrujaComun (Comun *, TipoError &);
+    void registrarBrujaComun (Comun *, String , TipoError &);
 
 };
 
