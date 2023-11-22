@@ -19,8 +19,6 @@ class CapaLogica {
         //R2 = Alta de bruja Comun
         void registrarBrujaComun(Comun *comun, String identSup, TipoError &error);
 
-        void registrarHechizoEnBruja(String, Hechizo *, TipoError &);
-
         //R3 = Listar todas las brujas alfabeticamente
         Iterador *listarBrujasAlfabeticamente(TipoError &error);
 
@@ -30,6 +28,8 @@ class CapaLogica {
         //R5 = Listar detalles de la bruja suprema mas antigua del aquelarre
         Bruja *listarBrujaSupremaMasAntigua(TipoError &error);
 
+        //R6 = Registrar nuevo hechizo en una bruja
+        void registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoError &error);
 };
 
 
