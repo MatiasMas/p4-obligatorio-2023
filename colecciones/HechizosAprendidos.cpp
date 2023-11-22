@@ -1,7 +1,3 @@
-//
-// Created by User on 14/11/2023.
-//
-
 #include "HechizosAprendidos.h"
 
 HechizosAprendidos::HechizosAprendidos() {
@@ -62,4 +58,16 @@ HechizosAprendidos::~HechizosAprendidos() {
         delete hechizos.arre[i];
         hechizos.arre[i] = nullptr;
     }
+}
+
+int HechizosAprendidos::cantidadEspeciales() {
+    int especiales = 0;
+
+    for (int i = 0; i < hechizos.tope; ++i) {
+        if (hechizos.arre[i]->getTipo() == TipoHechizo::ESPECIAL) {
+            especiales++;
+        }
+    }
+
+    return especiales;
 }

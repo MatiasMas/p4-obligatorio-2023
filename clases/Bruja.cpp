@@ -62,3 +62,7 @@ String Bruja::generarString() {
 
 Bruja::~Bruja() {
 }
+
+HechizosAprendidos Bruja::getHechizosAprendidos() {
+    return hechizosAprendidos;
+}

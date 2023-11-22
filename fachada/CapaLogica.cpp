@@ -42,14 +42,14 @@ Iterador *CapaLogica::listarBrujasAlfabeticamente(TipoError &error) {
     return iterador;
 }
 
-Bruja *CapaLogica::listarDetallesBruja(String identSup, TipoError &error) {
+Bruja *CapaLogica::listarDetallesBruja(String identSup, int &puntosDePoder, TipoError &error) {
     Bruja* bruja = nullptr;
     error = TipoError::SIN_ERROR;
 
     if (!brujas.member(identSup)){
         error = TipoError::BRUJA_NO_EXISTE;
     } else {
-        bruja = brujas.listarDetallesBruja(identSup);
+        bruja = brujas.listarDetallesBruja(identSup, puntosDePoder);
     }
 
     return bruja;

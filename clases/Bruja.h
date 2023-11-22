@@ -25,6 +25,8 @@ class Bruja {
 
         void insertarHechizo(Hechizo *hech);
 
+        HechizosAprendidos getHechizosAprendidos();
+
         Iterador *listarHechizosAprendidos();
 
         virtual TipoBruja getTipo() = 0;
