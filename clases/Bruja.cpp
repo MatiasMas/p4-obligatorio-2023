@@ -16,6 +16,10 @@ void Bruja::setNombre(String nom) {
     nombre = nom;
 }
 
+HechizosAprendidos Bruja::getHechizosAprendidos(){
+    return hechizosAprendidos;
+}
+
 void Bruja::insertarHechizo(Hechizo *hech) {
     hechizosAprendidos.insBack(hech);
 }
