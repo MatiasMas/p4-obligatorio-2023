@@ -23,15 +23,17 @@ class Bruja {
 
         void setNombre(String nom);
 
-        void insertarHechizo(Hechizo hech);
+        void insertarHechizo(Hechizo *hech);
 
-        Iterador listarHechizosAprendidos();
+        Iterador *listarHechizosAprendidos();
 
         virtual TipoBruja getTipo() = 0;
 
         virtual int calcularPuntosDePoder() = 0;
 
-        String generarString();
+        String generarStringHechizos();
+
+        virtual String generarString();
 
         virtual ~Bruja();
 };

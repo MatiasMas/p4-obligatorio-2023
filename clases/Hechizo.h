@@ -22,7 +22,7 @@ class Hechizo {
 
         virtual TipoHechizo getTipo();
 
-        String generarString();
+        virtual String generarString();
 
         ~Hechizo();
 };

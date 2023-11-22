@@ -27,3 +27,14 @@ TipoHechizo Especial::getTipo() {
 Especial::~Especial() {
 
 }
+
+String Especial::generarString() {
+    String datos = Hechizo::generarString();
+
+    String anio;
+    anio = anio.convertirIntAString(getAnioManifesto());
+
+    datos = datos + ", Anio Manifiesto: " + anio + ", Descripcion: " + descripcion;
+
+    return datos;
+}

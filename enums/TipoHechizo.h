@@ -3,7 +3,7 @@
 
 
 enum class TipoHechizo : int {
-    HECHIZO,
+    COMUN,
     ESPECIAL
 };
 

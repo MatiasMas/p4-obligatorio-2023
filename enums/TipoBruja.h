@@ -4,7 +4,7 @@
 
 enum class TipoBruja : int {
     SUPREMA,
-    ESPECIAL
+    COMUN
 };
 
 

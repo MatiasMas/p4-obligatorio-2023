@@ -82,7 +82,7 @@ void String::scan() {
 
 ///IMPRIME POR PANTALLA EL STRING
 void String::print() {
-    cout << cadena;
+    cout << cadena << "\n";
 }
 
 String String::convertirIntAString(int num) {

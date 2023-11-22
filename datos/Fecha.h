@@ -6,6 +6,8 @@
 #define OBLIGATORIO2023AMS_FECHA_H
 
 
+#include "String.h"
+
 class Fecha {
     private:
         int dd, mm, aa;
@@ -49,6 +51,10 @@ class Fecha {
 
         //Validacion de la fecha
         bool esValida();
+
+        String generarString();
+
+        ~Fecha();
 };
 
 

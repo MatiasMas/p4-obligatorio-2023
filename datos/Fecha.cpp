@@ -169,3 +169,21 @@ bool Fecha::esValida() {
     }
     return es;
 }
+
+Fecha::~Fecha() {
+
+}
+
+String Fecha::generarString() {
+    String fecha;
+
+    String diaString, mesString, anioString;
+
+    diaString = diaString.convertirIntAString(getDia());
+    mesString = mesString.convertirIntAString(getMes());
+    anioString = anioString.convertirIntAString(getAnio());
+
+    fecha = diaString + "/" + mesString + "/" + anioString;
+
+    return fecha;
+}

@@ -24,6 +24,8 @@ class Suprema : public Bruja {
 
         TipoBruja getTipo();
 
+        String generarString();
+
         ~Suprema();
 };
 

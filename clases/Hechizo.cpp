@@ -18,7 +18,7 @@ String Hechizo::getTexto() {
 }
 
 TipoHechizo Hechizo::getTipo() {
-    return TipoHechizo::HECHIZO;
+    return TipoHechizo::COMUN;
 }
 
 Hechizo::~Hechizo() {
@@ -31,11 +31,21 @@ void Hechizo::setNumero(int num) {
 
 String Hechizo::generarString() {
     String datos;
+    String tipoHechizo;
+
+    switch (getTipo()) {
+        case TipoHechizo::COMUN:
+            tipoHechizo = "Comun";
+            break;
+        case TipoHechizo::ESPECIAL:
+            tipoHechizo = "Especial";
+            break;
+    }
 
     String num;
     num = num.convertirIntAString(getNumero());
 
-    datos = datos + "Tipo: Hechizo Comun, " + "Numero: " + num + ", Texto: " + texto;
+    datos = datos + "Tipo Hechizo: " + tipoHechizo + ", Numero: " + num + ", Texto: " + texto;
 
     return datos;
 }

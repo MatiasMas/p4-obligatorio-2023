@@ -4,6 +4,8 @@
 #include "colecciones/HechizosAprendidos.h"
 #include "fachada/CapaLogica.h"
 #include "clases/Suprema.h"
+#include "clases/Especial.h"
+#include "clases/Comun.h"
 
 void pruebaAltaBurjaSuprema(){
 
@@ -36,54 +38,26 @@ int main() {
     /*****test de alta de bruja superma******/
 //    pruebaAltaBurjaSuprema();
 //
-    Hechizo *hechizo1 = new Hechizo("Hechizo Nr 1");
-    Hechizo *hechizo2 = new Hechizo("Hechizo Nr 2");
-    Hechizo *hechizo3 = new Hechizo("Hechizo Nr 3");
+    Hechizo *hechizo1 = new Hechizo("Texto Comun 1");
+    Hechizo *hechizo2 = new Hechizo("Texto Comun 2");
+//    Hechizo *hechizo3 = new Hechizo("Hechizo Nr 3");
 //    Hechizo *hechizo4 = new Hechizo("Hechizo Nr 1");
-//
-    HechizosAprendidos *hechizosAprendidos = new HechizosAprendidos();
-//
-    hechizosAprendidos->insBack(hechizo1);
-    hechizosAprendidos->insBack(hechizo2);
-    hechizosAprendidos->insBack(hechizo3);
 
-//    cout << "Hello, World!";
-//
-//    if (!hechizosAprendidos->esVacia()) {
-//        cout << "Es vacio " << hechizosAprendidos->largoHechizos() ;
-//
-//    }
+    Especial* especial1 = new Especial("Texto Especial 1", 2023, "Descripcion Especial 1");
+    Especial* especial2 = new Especial("Texto Especial 2", 2022, "Descripcion Especial 2");
 
-//idsuprema, datos de la bruja comun
 
-/*
-si el id existe (existe(arbol))
-    Suprema * suprema = retrieveArbol(idsuprema)
-    Comun brujaComun = new Comun(datos de la bruja comun, *suprema)
+    Suprema* suprema = new Suprema("Suprema 1", "Nombre Suprema", Fecha(20,3,1990), 5);
 
-    arbol.insert(comun)
-*/
+    suprema->insertarHechizo(hechizo1);
+    suprema->insertarHechizo(hechizo2);
+    suprema->insertarHechizo(especial1);
+    suprema->insertarHechizo(especial2);
 
-//    Hechizo* hechizoBuscado = hechizosAprendidos->ksimo(2);
-//
-//    Iterador *iterador = hechizosAprendidos->listarHechizos();
-//
-//    String* myString = iterador->proximoObjeto();
-//
-//    myString->print();
+    suprema->generarString().print();
 
-//    String myString1 = String("Pepito");
-//    String myString2 = String("Fulano");
-//
-//    String stringCombinado = String();
-//
-//    stringCombinado = myString1 + myString2;
-//
-//    std::cout << "", stringCombinado;
+    Comun* comun = new Comun("Comun 1", "Nombre Comun", "Antartida", true, suprema);
 
-//    Hechizo *hechizo = new Hechizo("asd");
-//
-//    String* asdd = hechizo->generarString();
-//
-//    asdd->print();
+    comun->insertarHechizo(hechizo1);
+    comun->generarString().print();
 }

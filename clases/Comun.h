@@ -34,6 +34,8 @@ class Comun : public Bruja {
 
         int calcularPuntosDePoder();
 
+        String generarString();
+
         ~Comun();
 };
 

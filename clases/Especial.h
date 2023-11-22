@@ -3,26 +3,27 @@
 
 #include "Hechizo.h"
 
-class Especial : public Hechizo
-{
-private:
-    int anioManifesto;
-    String descripcion;
+class Especial : public Hechizo {
+    private:
+        int anioManifesto;
+        String descripcion;
 
-public:
-    Especial(String txt, int anio, String desc);
+    public:
+        Especial(String txt, int anio, String desc);
 
-    void setAnioManifesto(int anio);
+        void setAnioManifesto(int anio);
 
-    int getAnioManifesto();
+        int getAnioManifesto();
 
-    void setDescripcion(String desc);
+        void setDescripcion(String desc);
 
-    String getDescripcion();
+        String getDescripcion();
 
-    TipoHechizo getTipo();
+        String generarString();
 
-    ~Especial();
+        TipoHechizo getTipo();
+
+        ~Especial();
 };
 
 
