@@ -8,6 +8,26 @@
 #include "clases/Comun.h"
 
 
+void pruebaAltaBurjaSuprema(){
+     CapaLogica fachada;
+     TipoError error;
+     Suprema *sup = new Suprema("1","nom",Fecha(),3);
+     Suprema *sup2 = new Suprema("1","nom",Fecha(),3);
+     fachada.registrarBrujaSuprema(sup,error);
+    if(error == TipoError::BRUJA_SUPREMA_YA_EXISTE){
+        printf("\nla bruja suprema ya existe");
+    }else{
+        printf("\nla bruja suprema se dio de alta");
+    }
+    //prueba de que no me deja ingresarla con el mismo identificador en el arbol
+     fachada.registrarBrujaSuprema(sup2,error);
+     if(error == TipoError::BRUJA_SUPREMA_YA_EXISTE){
+        printf("\nla bruja suprema ya existe");
+    }else{
+        printf("\nla bruja suprema se dio de alta");
+    }
+}
+
 void pruebaAltaBurjaComun(){
 
      CapaLogica fachada;
@@ -47,11 +67,38 @@ void pruebaAltaBurjaComun(){
 
 }
 
+void pruebaRegistrarHechizoEnBruja(){
+    CapaLogica fachada;
+    TipoError error;
+    Suprema *sup3 = new Suprema("5","suprema 3",Fecha(),3);
+    Hechizo *hechizo = new Hechizo("Hechizo prueba");
+
+
+    fachada.registrarBrujaSuprema(sup3,error);
+
+    fachada.registrarHechizoEnBruja(sup3->getIdentificador(),hechizo,error);
+
+    if(error != TipoError::SIN_ERROR){
+        printf("\nError en registrar hechizo");
+        printf("codigo de error:%d",error);
+    }else{
+        printf("\nEl hechizo se registro correctamente en la bruja");
+    }
+
+}
+
 int main() {
 
-    /*****test de alta de bruja superma******/
+//    /*****test de alta de bruja superma******/
 //    pruebaAltaBurjaSuprema();
 //
+//     /*****test de alta de bruja superma******/
+//    pruebaAltaBurjaComun();
+
+    /*****test de alta de hechizo en bruja******/
+    pruebaRegistrarHechizoEnBruja();
+
+
     Hechizo *hechizo1 = new Hechizo("Hechizo Nr 1");
     Hechizo *hechizo2 = new Hechizo("Hechizo Nr 1");
     Hechizo *hechizo3 = new Hechizo("Hechizo Nr 1");

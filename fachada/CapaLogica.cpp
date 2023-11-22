@@ -1,7 +1,8 @@
 #include "CapaLogica.h"
 
 
-void CapaLogica::registrarBrujaSuprema(Suprema *sup, TipoError &error) {
+void CapaLogica::registrarBrujaSuprema(Suprema *sup, TipoError &error)
+{
     error = TipoError::SIN_ERROR;
 
     String ident = sup->getIdentificador();
@@ -14,8 +15,6 @@ void CapaLogica::registrarBrujaSuprema(Suprema *sup, TipoError &error) {
 }
 
 void CapaLogica::registrarBrujaComun(Comun *comun, String identSup, TipoError &error) {
-    //TODO: falta verificar que si la suprema existe, que sea de tipo suprema, esto ya esta hecho en la linea 24 no?
-
     error = TipoError::SIN_ERROR;
 
     if (!brujas.member(identSup)) {
@@ -66,5 +65,17 @@ Bruja *CapaLogica::listarBrujaSupremaMasAntigua(TipoError &error) {
     }
 
     return bruja;
+}
+
+void CapaLogica::registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoError &error)
+{
+    error = TipoError::SIN_ERROR;
+    if (!brujas.member(ident))
+        error = TipoError::BRUJA_NO_EXISTE;
+    else if (brujas.find(ident)->getHechizosAprendidos().estaLleno())
+        error = TipoError::MAXIMO_HECHIZOS_ALCANZADO;
+    else
+        brujas.find(ident)->insertarHechizo(hechizo);
+
 }
 
