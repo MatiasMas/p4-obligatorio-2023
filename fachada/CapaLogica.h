@@ -14,6 +14,7 @@ private:
 public:
     //en varios lados muestra que en la fachada pasa los objetos, pero en al solucion del practio 4, ejercicio 5, lo pasa como puntero
     void registrarBrujaSuprema (Suprema *, TipoError &);
+
 //    void altaBrujaComun (Comun *, TipoError &);
 
 };

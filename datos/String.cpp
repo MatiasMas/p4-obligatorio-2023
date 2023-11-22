@@ -11,7 +11,7 @@ String::String() {
 }
 
 ///CONSTRUCTOR COMUN
-String::String(char *cad) {
+String::String(const char *cad) {
     int largo = strlen(cad);
     cadena = new char[largo + 1];
     strcpy(cadena, cad);
@@ -56,9 +56,12 @@ String String::operator+(String otro) {
     String aux;
     int largo1 = strlen(cadena);
     int largo2 = strlen(otro.cadena);
+
     aux.cadena = new char[largo1 + largo2 + 1];
+
     strcpy(aux.cadena, cadena);
     strcat(aux.cadena, otro.cadena);
+
     return aux;
 }
 

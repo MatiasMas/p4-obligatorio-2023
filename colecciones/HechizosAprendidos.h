@@ -30,6 +30,8 @@ class HechizosAprendidos {
         Iterador* listarHechizos();
 
         bool existeHechizo(int hechizoNum);
+
+        ~HechizosAprendidos();
 };
 
 

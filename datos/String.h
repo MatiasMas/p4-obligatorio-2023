@@ -11,7 +11,7 @@ class String {
     public:
         String(); // Constructor por defecto
 
-        String(char *); // Constructor com�n
+        String(const char *); // Constructor com�n
 
         String(const String &);//Constructor de copia
 
