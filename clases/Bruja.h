@@ -31,7 +31,7 @@ class Bruja {
 
         virtual int calcularPuntosDePoder() = 0;
 
-        String* generarString();
+        String generarString();
 
         virtual ~Bruja();
 };

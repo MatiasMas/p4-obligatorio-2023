@@ -14,7 +14,7 @@ void pruebaAltaBurjaSuprema(){
 
      fachada.registrarBrujaSuprema(sup,error);
 
-    if(error == BRUJA_SUPREMA_YA_EXISTE){
+    if(error == TipoError::BRUJA_SUPREMA_YA_EXISTE){
             printf("\nla burja ya existe");
     }else{
         printf("\nla burja se dio de alta");
@@ -23,7 +23,7 @@ void pruebaAltaBurjaSuprema(){
     //prueba de que no me deja ingresarla con el mismo identificador en el arbol
      fachada.registrarBrujaSuprema(sup2,error);
 
-     if(error == BRUJA_SUPREMA_YA_EXISTE){
+     if(error == TipoError::BRUJA_SUPREMA_YA_EXISTE){
             printf("\nla burja ya existe");
     }else{
         printf("\nla burja se dio de alta");
@@ -36,16 +36,16 @@ int main() {
     /*****test de alta de bruja superma******/
 //    pruebaAltaBurjaSuprema();
 //
-//    Hechizo *hechizo1 = new Hechizo("Hechizo Nr 1");
-//    Hechizo *hechizo2 = new Hechizo("Hechizo Nr 1");
-//    Hechizo *hechizo3 = new Hechizo("Hechizo Nr 1");
+    Hechizo *hechizo1 = new Hechizo("Hechizo Nr 1");
+    Hechizo *hechizo2 = new Hechizo("Hechizo Nr 2");
+    Hechizo *hechizo3 = new Hechizo("Hechizo Nr 3");
 //    Hechizo *hechizo4 = new Hechizo("Hechizo Nr 1");
 //
-//    HechizosAprendidos *hechizosAprendidos = new HechizosAprendidos();
+    HechizosAprendidos *hechizosAprendidos = new HechizosAprendidos();
 //
-//    hechizosAprendidos->insBack(hechizo1);
-//    hechizosAprendidos->insBack(hechizo2);
-//    hechizosAprendidos->insBack(hechizo3);
+    hechizosAprendidos->insBack(hechizo1);
+    hechizosAprendidos->insBack(hechizo2);
+    hechizosAprendidos->insBack(hechizo3);
 
 //    cout << "Hello, World!";
 //
@@ -65,8 +65,12 @@ si el id existe (existe(arbol))
 */
 
 //    Hechizo* hechizoBuscado = hechizosAprendidos->ksimo(2);
-
+//
 //    Iterador *iterador = hechizosAprendidos->listarHechizos();
+//
+//    String* myString = iterador->proximoObjeto();
+//
+//    myString->print();
 
 //    String myString1 = String("Pepito");
 //    String myString2 = String("Fulano");
@@ -77,18 +81,9 @@ si el id existe (existe(arbol))
 //
 //    std::cout << "", stringCombinado;
 
-    String datos = String("");
-
-    int i = 42;
-
-    std::string str = std::to_string(i);
-
-    const char* cstr = str.c_str();
-
-    String asdsd = String(cstr);
-
-    datos = datos + "Tipo: Hechizo Comun, " + "Numero: " + asdsd;
-
-    datos.print();
-
+//    Hechizo *hechizo = new Hechizo("asd");
+//
+//    String* asdd = hechizo->generarString();
+//
+//    asdd->print();
 }

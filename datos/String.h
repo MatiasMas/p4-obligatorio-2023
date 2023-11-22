@@ -13,7 +13,7 @@ class String {
 
         String(const char *); // Constructor com�n
 
-        String(const String &);//Constructor de copia
+        String(String &);//Constructor de copia
 
         ~String(); // Destructor
 
@@ -28,6 +28,8 @@ class String {
         void scan();// lee un string desde la entrada est�ndar
 
         void print();// muestra un string en la salida est�ndar
+
+        String convertirIntAString(int num);
 };
 
 

@@ -27,3 +27,7 @@ Iterador Bruja::listarHechizosAprendidos() {
 Bruja::~Bruja() {
 
 }
+
+String Bruja::generarString() {
+
+}

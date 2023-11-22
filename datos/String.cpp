@@ -18,7 +18,7 @@ String::String(const char *cad) {
 }
 
 ///CONSTRUCTOR DE COPIA
-String::String(const String &otro) {
+String::String(String &otro) {
     int largo = strlen(otro.cadena);
     cadena = new char[largo + 1];
     strcpy(cadena, otro.cadena);
@@ -83,4 +83,13 @@ void String::scan() {
 ///IMPRIME POR PANTALLA EL STRING
 void String::print() {
     cout << cadena;
+}
+
+String String::convertirIntAString(int num) {
+    std::string str = std::to_string(num);
+    const char* cstr = str.c_str();
+
+    String numHechizoString = String(cstr);
+
+    return numHechizoString;
 }

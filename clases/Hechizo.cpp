@@ -30,20 +30,12 @@ void Hechizo::setNumero(int num) {
 }
 
 String Hechizo::generarString() {
-    String datos = String("");
+    String datos;
 
-    int i = 42;
+    String num;
+    num = num.convertirIntAString(getNumero());
 
-    std::string str = std::to_string(i);
-
-    const char* cstr = str.c_str();
-
-    String asdsd = String(cstr);
-
-//    String asdsa = "" + std::to_string(numero);
-
-    datos = datos + "Tipo: Hechizo Comun, " + "Numero: " + asdsd;
+    datos = datos + "Tipo: Hechizo Comun, " + "Numero: " + num + ", Texto: " + texto;
 
     return datos;
-
 }

@@ -37,7 +37,9 @@ Iterador *HechizosAprendidos::listarHechizos() {
     Iterador *iterador = new Iterador();
 
     for (int i = 0; i < hechizos.tope; ++i) {
-//        iterador->insertar(hechizos.arre[i]);
+        String* strAux = new String(hechizos.arre[i]->generarString());
+
+        iterador->insertar(strAux);
     }
 
     return iterador;
@@ -57,7 +59,7 @@ bool HechizosAprendidos::existeHechizo(int hechizoNum) {
 
 HechizosAprendidos::~HechizosAprendidos() {
     for (int i = 0; i < hechizos.tope; ++i) {
-//        delete arre[i];
-//        arre[i] = nullptr;
+        delete hechizos.arre[i];
+        hechizos.arre[i] = nullptr;
     }
 }
