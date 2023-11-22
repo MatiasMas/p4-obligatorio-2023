@@ -1,5 +1,5 @@
 #include "Suprema.h"
-
+#include <iostream>
 
 Suprema :: Suprema (String ident, String nom, Fecha fecNac, int cantPoderes): Bruja(ident,nom)
 {

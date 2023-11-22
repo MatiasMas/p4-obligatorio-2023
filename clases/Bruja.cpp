@@ -1,19 +1,16 @@
 #include "Bruja.h"
+#include <iostream>
 
 Bruja::Bruja(String ident, String nom) : identificador(ident), nombre(nom) {
 
 }
 
 String Bruja::getIdentificador() {
-    return String();
+    return identificador;
 }
 
 String Bruja::getNombre() {
-    return String();
-}
-
-void Bruja::setNombre(String nom) {
-
+    return nombre;
 }
 
 void Bruja::insertarHechizo(Hechizo hech) {

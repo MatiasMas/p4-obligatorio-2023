@@ -1,7 +1,7 @@
 #ifndef TIPOERROR_H
 #define TIPOERROR_H
 
-typedef enum { SIN_ERROR, BRUJA_SUPREMA_YA_EXISTE
+typedef enum { SIN_ERROR, BRUJA_SUPREMA_YA_EXISTE, BRUJA_SUPREMA_NO_EXISTE, BRUJA_COMUN_YA_EXISTE
              } TipoError;
 
 #endif // TIPOERROR_H
