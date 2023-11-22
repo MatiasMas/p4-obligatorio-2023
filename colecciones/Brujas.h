@@ -15,28 +15,36 @@ class Brujas {
         };
         Nodo *ABB;
 
-        bool perteneceEnArbol(Nodo *, String);
+        bool perteneceEnArbol(Nodo *a, String ident);
 
-        void insertEnArbol(Nodo *&, Bruja *);
+        void insertEnArbol(Nodo *&a, Bruja *bruja);
 
-        Bruja *obtenerEnArbol(Nodo *, String);
+        Bruja *obtenerEnArbol(Nodo *a, String ident);
 
-        void cargarIterador(Nodo *, Iterador &);
+        void cargarIterador(Nodo *a, Iterador *&iterador);
 
-        void destruirArbol(Nodo *&);
+        void destruirArbol(Nodo *&a);
+
+        void buscarBrujaMasAntiguaRecursivo(Nodo *abb, String &identSup, Fecha &fechaMasAntigua);
 
     public:
         Brujas();
 
-        bool member(String);
+        bool member(String ident);
 
-        void insert(Bruja *);
+        void insert(Bruja *bruja);
 
-        Bruja *find(String);
+        Bruja *find(String ident);
 
-        void listarBrujas(Iterador &);
+        bool empty();
 
-        void insertBrujaComun(Comun *, String);
+        void insertBrujaComun(Comun *comun, String identSup);
+
+        Iterador* listarBrujas();
+
+        Bruja* listarDetallesBruja(String idBruja);
+
+        Bruja* listarBrujaSupremaMasAntigua();
 
         ~Brujas();
 };
