@@ -30,6 +30,7 @@ bool HechizosAprendidos::estaLleno() {
 }
 
 Hechizo *HechizosAprendidos::ksimo(int k) {
+
     return hechizos.arre[k];
 }
 

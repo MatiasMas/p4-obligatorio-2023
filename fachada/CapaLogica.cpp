@@ -45,7 +45,9 @@ Bruja *CapaLogica::listarDetallesBruja(String identSup, TipoError &error) {
     Bruja* bruja = nullptr;
     error = TipoError::SIN_ERROR;
 
-    if (!brujas.member(identSup)){
+    if (brujas.empty()){
+        error = TipoError::DICCIONARIO_BRUJAS_VACIO;
+    }else if (!brujas.member(identSup)){
         error = TipoError::BRUJA_NO_EXISTE;
     } else {
         bruja = brujas.listarDetallesBruja(identSup);
@@ -76,6 +78,25 @@ void CapaLogica::registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoErr
         error = TipoError::MAXIMO_HECHIZOS_ALCANZADO;
     else
         brujas.find(ident)->insertarHechizo(hechizo);
+
+}
+
+
+Hechizo* CapaLogica::listarHechizo(String ident, int numHechizo, TipoError &error){
+    Hechizo* hechizo = nullptr;
+    error = TipoError::SIN_ERROR;
+
+    if (brujas.empty())
+        error = TipoError::DICCIONARIO_BRUJAS_VACIO;
+    else if (!brujas.member(ident))
+        error = TipoError::BRUJA_NO_EXISTE;
+    else if(!brujas.find(ident)->getHechizosAprendidos().existeHechizo(numHechizo))
+        error = TipoError::HECHIZO_NO_EXISTE;
+    else
+        printf("llego ****************");
+        hechizo = brujas.find(ident)->getHechizosAprendidos().ksimo(numHechizo);
+
+    return hechizo;
 
 }
 
