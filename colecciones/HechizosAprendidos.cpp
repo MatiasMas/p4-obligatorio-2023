@@ -13,7 +13,7 @@ void HechizosAprendidos::insBack(Hechizo *hech) {
 
     hech->setNumero(pos + 1);
     hechizos.arre[pos] = hech;
-    
+
     hechizos.tope++;
 }
 
@@ -29,15 +29,15 @@ bool HechizosAprendidos::estaLleno() {
     return hechizos.tope == CANT;
 }
 
-Hechizo* HechizosAprendidos::ksimo(int k) {
+Hechizo *HechizosAprendidos::ksimo(int k) {
     return hechizos.arre[k];
 }
 
-Iterador* HechizosAprendidos::listarHechizos() {
-    Iterador* iterador = new Iterador();
+Iterador *HechizosAprendidos::listarHechizos() {
+    Iterador *iterador = new Iterador();
 
     for (int i = 0; i < hechizos.tope; ++i) {
-        iterador->insertar(hechizos.arre[i]);
+//        iterador->insertar(hechizos.arre[i]);
     }
 
     return iterador;
@@ -46,11 +46,18 @@ Iterador* HechizosAprendidos::listarHechizos() {
 bool HechizosAprendidos::existeHechizo(int hechizoNum) {
     bool existe = false;
 
-    if (!esVacia()){
-        if (hechizos.tope > hechizoNum && hechizoNum >= 0){
+    if (!esVacia()) {
+        if (hechizos.tope > hechizoNum && hechizoNum >= 0) {
             existe = true;
         }
     }
 
     return existe;
+}
+
+HechizosAprendidos::~HechizosAprendidos() {
+    for (int i = 0; i < hechizos.tope; ++i) {
+//        delete arre[i];
+//        arre[i] = nullptr;
+    }
 }

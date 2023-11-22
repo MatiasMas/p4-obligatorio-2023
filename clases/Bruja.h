@@ -8,7 +8,7 @@
 #include "../colecciones/Iterador.h"
 #include "../enums/TipoBruja.h"
 
-class Bruja : public Objeto {
+class Bruja {
     private:
         String identificador;
         String nombre;
@@ -30,6 +30,8 @@ class Bruja : public Objeto {
         virtual TipoBruja getTipo() = 0;
 
         virtual int calcularPuntosDePoder() = 0;
+
+        String* generarString();
 
         virtual ~Bruja();
 };

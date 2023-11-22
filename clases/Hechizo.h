@@ -3,9 +3,8 @@
 
 #include "../datos/String.h"
 #include "../enums/TipoHechizo.h"
-#include "Objeto.h"
 
-class Hechizo : public Objeto {
+class Hechizo {
     private:
         int numero;
         String texto;
@@ -22,6 +21,8 @@ class Hechizo : public Objeto {
         String getTexto();
 
         virtual TipoHechizo getTipo();
+
+        String generarString();
 
         ~Hechizo();
 };

@@ -13,7 +13,6 @@ class Brujas {
             Nodo *hizq;
             Nodo *hder;
         };
-
         Nodo *ABB;
 
         bool perteneceEnArbol(Nodo *, String);

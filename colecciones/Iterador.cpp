@@ -6,10 +6,11 @@ Iterador::Iterador() {
     actual = nullptr;
 }
 
-void Iterador::insertar(Objeto *due) {
+void Iterador::insertar(String *due) {
     Nodo *nuevo = new Nodo;
     nuevo->info = due;
     nuevo->sig = nullptr;
+
     if (prim == nullptr) {
         prim = nuevo;
         ulti = nuevo;
@@ -24,14 +25,16 @@ bool Iterador::hayMasObjetos() {
     return (bool) (actual != nullptr);
 }
 
-Objeto *Iterador::proximoObjeto() {
-    Objeto *resu = actual->info;
+String *Iterador::proximoObjeto() {
+    String *resu = actual->info;
     actual = actual->sig;
+
     return resu;
 }
 
 Iterador::~Iterador() {
     Nodo *aux = prim;
+
     while (aux != nullptr) {
         prim = prim->sig;
         delete aux;

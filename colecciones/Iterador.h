@@ -2,12 +2,12 @@
 #define OBLIGATORIO2023AMS_ITERADOR_H
 
 
-#include "../clases/Objeto.h"
+#include "../datos/String.h"
 
 class Iterador {
     private:
         struct Nodo {
-            Objeto *info;
+            String *info;
             Nodo *sig;
         };
         Nodo *prim;
@@ -17,11 +17,11 @@ class Iterador {
     public:
         Iterador();
 
-        void insertar(Objeto *);
+        void insertar(String *);
 
         bool hayMasObjetos();
 
-        Objeto *proximoObjeto();
+        String *proximoObjeto();
 
         ~Iterador();
 };
