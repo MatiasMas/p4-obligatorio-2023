@@ -83,6 +83,12 @@ bool Brujas :: member (String ident)
     return perteneceEnArbol(ABB, ident);
 }
 
+Bruja * Brujas :: find (String ident)
+{
+    return obtenerEnArbol (ABB, ident);
+}
+
+
 Brujas :: ~Brujas ()
 {
     destruirArbol(ABB);

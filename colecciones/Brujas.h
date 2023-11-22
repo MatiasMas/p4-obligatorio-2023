@@ -36,7 +36,7 @@ class Brujas {
 
         void listarBrujas(Iterador &);
 
-         void insertBrujaComun(Comun *, String);
+        void insertBrujaComun(Comun *, String);
 
         ~Brujas();
 };

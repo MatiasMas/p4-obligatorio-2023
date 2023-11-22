@@ -38,6 +38,7 @@ void pruebaAltaBurjaComun(){
      TipoError error;
      Suprema *sup = new Suprema("2","suprema",Fecha(),3);
      Comun *com = new Comun("3","Comun","salem",false,NULL);
+    Comun *com2 = new Comun("4","Comun 2","salem",false,NULL);
 
      fachada.registrarBrujaSuprema(sup,error);
 
@@ -48,8 +49,18 @@ void pruebaAltaBurjaComun(){
     }
 
     String identSup = sup->getIdentificador();
-    //prueba de que no me deja ingresarla con el mismo identificador en el arbol
-     fachada.registrarBrujaComun(com,identSup,error);
+    fachada.registrarBrujaComun(com,identSup,error);
+
+     if(error != SIN_ERROR){
+        printf("\nerror");
+        printf("%d",error);
+    }else{
+        printf("\nla bruja comun se dio de alta");
+    }
+
+    //prueba de asociar una bruja comun con otra bruja, debe dar error
+    String identCom2 = com2->getIdentificador();
+    fachada.registrarBrujaComun(com,identCom2,error);
 
      if(error != SIN_ERROR){
         printf("\nerror");
