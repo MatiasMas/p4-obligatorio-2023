@@ -28,6 +28,7 @@ class CapaLogica {
         Bruja* listarDetallesBruja(String identSup, TipoError &error);
 
         //R5 = Listar detalles de la bruja suprema mas antigua del aquelarre
+         Bruja *listarBrujaSupremaMasAntigua(TipoError &error);
 
 };
 
