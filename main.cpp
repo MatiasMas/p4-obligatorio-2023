@@ -69,9 +69,9 @@ int main() {
             cout << "Ingrese identificador de la Bruja Suprema que supervisa:" << endl;
             idSuprema.scan();
 
-            if (vuelaEscoba == "SI") {
+              if (vuelaEscoba == "SI"  ||  vuelaEscoba == "si"  ||  vuelaEscoba == "Si" ) {
                 boolAux = true;
-            } else if (vuelaEscoba == "NO") {
+            } else if (vuelaEscoba == "NO"  ||  vuelaEscoba == "no"  ||  vuelaEscoba == "No" ) {
                 boolAux = false;
             } else {
                 return -20;
@@ -87,7 +87,9 @@ int main() {
 
             if (iterador == nullptr) return -30;
 
-            iterador->proximoObjeto()->print();
+            while(iterador->hayMasObjetos())
+                    iterador->proximoObjeto()->print();
+
 
         } else if (opcionMenu == "4") {
 
@@ -120,13 +122,14 @@ int main() {
             cout << "El hechizo es especial? SI o NO:" << endl;
             esHechizoEspecial.scan();
 
-            if (esHechizoEspecial == "SI") {
+            if (esHechizoEspecial == "SI" ||  esHechizoEspecial== "si"  ||  esHechizoEspecial == "Si" ) {
                 boolAux = true;
-            } else if (esHechizoEspecial == "NO") {
+            } else if (esHechizoEspecial == "NO" ||  esHechizoEspecial== "no"  ||  esHechizoEspecial == "No" ) {
                 boolAux = false;
             } else {
                 return -60;
             }
+
 
             if (boolAux) {
                 cout << "Ingrese anio de manifiesto del hechizo:" << endl;
