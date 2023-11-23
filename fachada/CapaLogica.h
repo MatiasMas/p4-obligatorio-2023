@@ -23,7 +23,7 @@ public:
     Iterador *listarBrujasAlfabeticamente(TipoError &error);
 
     //R4 = Listar detalles de una bruja en particular junto con sus puntos de poder
-    Bruja* listarDetallesBruja(String identSup, TipoError &error);
+    Bruja *listarDetallesBruja(String identSup, int &puntosDePoder, TipoError &error);
 
     //R5 = Listar detalles de la bruja suprema mas antigua del aquelarre
     Bruja *listarBrujaSupremaMasAntigua(TipoError &error);
