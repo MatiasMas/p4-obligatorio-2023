@@ -35,6 +35,8 @@ class Bruja {
 
         String generarStringHechizos();
 
+        int cantidadEspecialesEnAnio(int anio);
+
         virtual String generarString();
 
         virtual ~Bruja();

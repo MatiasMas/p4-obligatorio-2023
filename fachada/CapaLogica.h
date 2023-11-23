@@ -30,6 +30,9 @@ class CapaLogica {
 
         //R6 = Registrar nuevo hechizo en una bruja
         void registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoError &error);
+
+        //R8 = Listar cantidad de hechizos especiales manifestados en un anio en particular
+        int cantidadHechizosEspecialesEnAnio(String ident, int anio, TipoError &error);
 };
 
 

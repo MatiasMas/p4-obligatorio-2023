@@ -46,6 +46,8 @@ class Brujas {
 
         Bruja* listarBrujaSupremaMasAntigua();
 
+        int cantidadHechizosEspecialesDesarrolladosEnAnio(String ident, int anio);
+
         ~Brujas();
 };
 

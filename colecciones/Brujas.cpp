@@ -139,3 +139,9 @@ void Brujas::buscarBrujaMasAntiguaRecursivo(Brujas::Nodo *abb, String &identSup,
         buscarBrujaMasAntiguaRecursivo(abb->hder, identSup, fechaMasAntigua);
     }
 }
+
+int Brujas::cantidadHechizosEspecialesDesarrolladosEnAnio(String ident, int anio) {
+    Bruja *bruja = find(ident);
+
+    return bruja->cantidadEspecialesEnAnio(anio);
+}

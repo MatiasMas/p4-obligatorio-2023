@@ -1,4 +1,5 @@
 #include "Bruja.h"
+#include "Especial.h"
 #include <iostream>
 
 Bruja::Bruja(String ident, String nom) : identificador(ident), nombre(nom), hechizosAprendidos() {
@@ -16,7 +17,7 @@ void Bruja::setNombre(String nom) {
     nombre = nom;
 }
 
-HechizosAprendidos Bruja::getHechizosAprendidos(){
+HechizosAprendidos Bruja::getHechizosAprendidos() {
     return hechizosAprendidos;
 }
 
@@ -65,4 +66,18 @@ String Bruja::generarString() {
 }
 
 Bruja::~Bruja() {
+}
+
+int Bruja::cantidadEspecialesEnAnio(int anio) {
+    int cantidadEspeciales = 0;
+
+    for (int i = 0; i < hechizosAprendidos.largoHechizos(); ++i) {
+        if (hechizosAprendidos.ksimo(i)->getTipo() == TipoHechizo::ESPECIAL) {
+            if (((Especial *) hechizosAprendidos.ksimo(i))->getAnioManifesto() == anio) {
+                cantidadEspeciales++;
+            }
+        }
+    }
+
+    return cantidadEspeciales;
 }

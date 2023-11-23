@@ -41,7 +41,7 @@ Iterador *CapaLogica::listarBrujasAlfabeticamente(TipoError &error) {
 }
 
 Bruja *CapaLogica::listarDetallesBruja(String identSup, int &puntosDePoder, TipoError &error) {
-    Bruja * bruja = nullptr;
+    Bruja *bruja = nullptr;
     error = TipoError::SIN_ERROR;
 
     if (!brujas.member(identSup)) {
@@ -54,7 +54,7 @@ Bruja *CapaLogica::listarDetallesBruja(String identSup, int &puntosDePoder, Tipo
 }
 
 Bruja *CapaLogica::listarBrujaSupremaMasAntigua(TipoError &error) {
-    Bruja * bruja = nullptr;
+    Bruja *bruja = nullptr;
     error = TipoError::SIN_ERROR;
 
     if (brujas.empty()) {
@@ -75,5 +75,20 @@ void CapaLogica::registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoErr
         error = TipoError::MAXIMO_HECHIZOS_ALCANZADO;
     else
         brujas.find(ident)->insertarHechizo(hechizo);
+}
+
+int CapaLogica::cantidadHechizosEspecialesEnAnio(String ident, int anio, TipoError &error) {
+    int cantidadHechizos = 0;
+    error = TipoError::SIN_ERROR;
+
+    if (!brujas.member(ident)) {
+        error = TipoError::BRUJA_NO_EXISTE;
+    } else if (brujas.find(ident)->getHechizosAprendidos().esVacia()) {
+        error = TipoError::NO_HAY_HECHIZOS_REGISTRADOS;
+    } else {
+        cantidadHechizos = brujas.cantidadHechizosEspecialesDesarrolladosEnAnio(ident, anio);
+    }
+
+    return cantidadHechizos;
 }
 
