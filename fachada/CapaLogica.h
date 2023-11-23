@@ -7,12 +7,10 @@
 #include "../enums/TipoError.h"
 
 class CapaLogica {
-
     private:
         Brujas brujas;
 
     public:
-        //en varios lados muestra que en la fachada pasa los objetos, pero en al solucion del practio 4, ejercicio 5, lo pasa como puntero
         //R1 = Alta de bruja Suprema
         void registrarBrujaSuprema(Suprema *sup, TipoError &error);
 
@@ -28,8 +26,11 @@ class CapaLogica {
         //R5 = Listar detalles de la bruja suprema mas antigua del aquelarre
         Bruja *listarBrujaSupremaMasAntigua(TipoError &error);
 
-        //R6 = Registrar nuevo hechizo en una bruja
+        //R6 = Registrar Hechizo en bruja
         void registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoError &error);
+
+        //R7 = Listar datos de hechizo de una bruja segun numero del mismo
+        Hechizo *listarHechizo(String ident, int numHechizo, TipoError &error);
 
         //R8 = Listar cantidad de hechizos especiales manifestados en un anio en particular
         int cantidadHechizosEspecialesEnAnio(String ident, int anio, TipoError &error);
