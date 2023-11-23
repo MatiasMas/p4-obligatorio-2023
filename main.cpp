@@ -87,9 +87,9 @@ int main() {
 
             if (iterador == nullptr) return -30;
 
-            while(iterador->hayMasObjetos())
-                    iterador->proximoObjeto()->print();
-
+            while (iterador->hayMasObjetos()) {
+                iterador->proximoObjeto()->print();
+            }
 
         } else if (opcionMenu == "4") {
 
@@ -101,6 +101,8 @@ int main() {
             if (bruja == nullptr) return -40;
 
             bruja->generarString().print();
+
+            cout << "Los puntos de poder de la bruja son: " << puntosPoder << endl;
 
         } else if (opcionMenu == "5") {
 
@@ -129,7 +131,6 @@ int main() {
             } else {
                 return -60;
             }
-
 
             if (boolAux) {
                 cout << "Ingrese anio de manifiesto del hechizo:" << endl;
