@@ -93,3 +93,18 @@ String String::convertirIntAString(int num) {
 
     return numHechizoString;
 }
+
+int String::convertirStringAInt() {
+    int i;
+    int digito;
+    int suma = 0;
+    i = 0;
+
+    while (cadena[i] != '\0'){
+        digito = cadena[i] - 48;
+        suma = (suma * 10) + digito;
+        i++;
+    }
+
+    return suma;
+}

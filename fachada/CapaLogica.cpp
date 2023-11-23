@@ -111,9 +111,7 @@ Hechizo *CapaLogica::listarHechizo(String ident, int numHechizo, TipoError &erro
     else if (!brujas.find(ident)->getHechizosAprendidos()->existeHechizo(numHechizo))
         error = TipoError::HECHIZO_NO_EXISTE;
     else
-        printf("llego ****************");
-
-    hechizo = brujas.find(ident)->getHechizosAprendidos()->ksimo(numHechizo);
+        hechizo = brujas.find(ident)->getHechizosAprendidos()->ksimo(numHechizo - 1);
 
     return hechizo;
 }

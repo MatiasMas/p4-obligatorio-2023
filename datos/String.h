@@ -30,6 +30,8 @@ class String {
         void print();// muestra un string en la salida est�ndar
 
         String convertirIntAString(int num);
+
+        int convertirStringAInt();
 };
 
 

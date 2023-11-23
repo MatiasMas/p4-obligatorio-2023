@@ -26,7 +26,6 @@ bool HechizosAprendidos::estaLleno() {
 }
 
 Hechizo *HechizosAprendidos::ksimo(int k) {
-
     return hechizos.arre[k];
 }
 
@@ -46,7 +45,7 @@ bool HechizosAprendidos::existeHechizo(int hechizoNum) {
     bool existe = false;
 
     if (!esVacia()) {
-        if (hechizos.tope > hechizoNum && hechizoNum >= 0) {
+        if (hechizos.tope >= hechizoNum && hechizoNum > 0) {
             existe = true;
         }
     }

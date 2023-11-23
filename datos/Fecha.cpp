@@ -141,7 +141,7 @@ int Fecha::operator-(Fecha f) {
 
 bool Fecha::esValida() {
     bool es = true;
-    if (aa < 1900 || aa > 2099)
+    if (aa < 100 || aa > 2099)
         es = false;
     else {
         switch (mm) {
@@ -152,19 +152,19 @@ bool Fecha::esValida() {
             case 8:
             case 10:
             case 12:
-                es = (bool) (dd < 1 || dd > 31);
+                es = (dd < 1 || dd > 31);
                 break;
             case 4:
             case 6:
             case 9:
             case 11:
-                es = (bool) (dd < 1 || dd > 30);
+                es = (dd < 1 || dd > 30);
                 break;
             case 2:
                 if (((aa % 4 == 0) && (aa % 100 != 0)) || (aa % 400 == 0))
-                    es = (bool) (dd < 1 || dd > 29);
+                    es = (dd < 1 || dd > 29);
                 else
-                    es = (bool) (dd < 1 || dd > 28);
+                    es = (dd < 1 || dd > 28);
         }
     }
     return es;
