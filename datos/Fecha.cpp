@@ -55,7 +55,7 @@ void Fecha::incrementar() {
 
 
 Fecha::Fecha() {
-    aa = 2000;
+    aa = 9999;
     mm = 1;
     dd = 1;
 }
