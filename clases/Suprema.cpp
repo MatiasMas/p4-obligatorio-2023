@@ -26,8 +26,16 @@ TipoBruja Suprema::getTipo() {
 }
 
 int Suprema::calcularPuntosDePoder() {
-    //Para implementar
-    return 1;
+    HechizosAprendidos hechizosAprendidos = getHechizosAprendidos();
+    int cantidadEspeciales = hechizosAprendidos.cantidadEspeciales();
+    int cantidadComunes = hechizosAprendidos.largoHechizos() - cantidadEspeciales;
+    int anioNacimiento = fechaNacimiento.getAnio();
+
+    int cantidadPuntos = (cantidadComunes * 2) + (cantidadEspeciales * 4) + cantidadPoderes;
+
+    if (anioNacimiento < 1900) cantidadPuntos = cantidadPuntos + 5;
+
+    return cantidadPuntos;
 }
 
 String Suprema::generarString() {

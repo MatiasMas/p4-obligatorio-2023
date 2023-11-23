@@ -98,15 +98,19 @@ Iterador *Brujas::listarBrujas() {
     return iterador;
 }
 
-Bruja *Brujas::listarDetallesBruja(String idBruja) {
+Bruja *Brujas::listarDetallesBruja(String idBruja, int &puntosDePoder) {
     Bruja *bruja = find(idBruja);
 
 //    switch (bruja->getTipo()) {
 //        case TipoBruja::SUPREMA:
+//            puntosDePoder = ((Suprema*)bruja)->calcularPuntosDePoder();
 //            break;
 //        case TipoBruja::COMUN:
+//            puntosDePoder = ((Comun*)bruja)->calcularPuntosDePoder();
 //            break;
 //    }
+
+    puntosDePoder = bruja->calcularPuntosDePoder();
 
     return bruja;
 }

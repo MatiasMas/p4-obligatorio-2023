@@ -42,7 +42,7 @@ class Brujas {
 
         Iterador* listarBrujas();
 
-        Bruja* listarDetallesBruja(String idBruja);
+        Bruja* listarDetallesBruja(String idBruja, int &puntosDePoder);
 
         Bruja* listarBrujaSupremaMasAntigua();
 

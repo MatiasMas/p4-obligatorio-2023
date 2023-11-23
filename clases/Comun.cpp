@@ -37,12 +37,23 @@ TipoBruja Comun::getTipo() {
 }
 
 int Comun::calcularPuntosDePoder() {
-    return 0;
+    HechizosAprendidos hechizosAprendidos = getHechizosAprendidos();
+    int cantidadEspeciales = hechizosAprendidos.cantidadEspeciales();
+    int cantidadComunes = hechizosAprendidos.largoHechizos() - cantidadEspeciales;
+
+    int cantidadPuntos = (cantidadComunes * 1) + (cantidadEspeciales * 2);
+
+    if (regionOrigen == "SALEM"){
+        cantidadPuntos++;
+    }
+
+    return cantidadPuntos;
 }
 
 String Comun::generarString() {
     String datos = Bruja::generarString();
     String vuelaEnEscoba;
+
     if(vuelaEscoba)
         vuelaEnEscoba = "Si";
     else

@@ -31,6 +31,8 @@ class HechizosAprendidos {
 
         bool existeHechizo(int hechizoNum);
 
+        int cantidadEspeciales();
+
         ~HechizosAprendidos();
 };
 
