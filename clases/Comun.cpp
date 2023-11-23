@@ -37,9 +37,9 @@ TipoBruja Comun::getTipo() {
 }
 
 int Comun::calcularPuntosDePoder() {
-    HechizosAprendidos hechizosAprendidos = getHechizosAprendidos();
-    int cantidadEspeciales = hechizosAprendidos.cantidadEspeciales();
-    int cantidadComunes = hechizosAprendidos.largoHechizos() - cantidadEspeciales;
+    HechizosAprendidos* hechizosAprendidos = getHechizosAprendidos();
+    int cantidadEspeciales = hechizosAprendidos->cantidadEspeciales();
+    int cantidadComunes = hechizosAprendidos->largoHechizos() - cantidadEspeciales;
 
     int cantidadPuntos = (cantidadComunes * 1) + (cantidadEspeciales * 2);
 

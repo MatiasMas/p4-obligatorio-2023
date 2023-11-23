@@ -21,7 +21,7 @@ class Bruja {
 
         String getNombre();
 
-        HechizosAprendidos getHechizosAprendidos();
+        HechizosAprendidos* getHechizosAprendidos();
 
         void setNombre(String nom);
 

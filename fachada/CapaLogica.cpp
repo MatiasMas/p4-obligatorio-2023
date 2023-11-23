@@ -1,5 +1,7 @@
 #include "CapaLogica.h"
 
+CapaLogica::CapaLogica() {
+}
 
 void CapaLogica::registrarBrujaSuprema(Suprema *sup, TipoError &error) {
     error = TipoError::SIN_ERROR;
@@ -71,9 +73,13 @@ Bruja *CapaLogica::listarBrujaSupremaMasAntigua(TipoError &error) {
 void CapaLogica::registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoError &error) {
     error = TipoError::SIN_ERROR;
 
+    Bruja* bruja = brujas.find(ident);
+    HechizosAprendidos* hechizosAprendidos = bruja->getHechizosAprendidos();
+    bool lleno = hechizosAprendidos->estaLleno();
+
     if (!brujas.member(ident))
         error = TipoError::BRUJA_NO_EXISTE;
-    else if (brujas.find(ident)->getHechizosAprendidos().estaLleno())
+    else if (lleno)
         error = TipoError::MAXIMO_HECHIZOS_ALCANZADO;
     else
         brujas.find(ident)->insertarHechizo(hechizo);
@@ -85,7 +91,7 @@ int CapaLogica::cantidadHechizosEspecialesEnAnio(String ident, int anio, TipoErr
 
     if (!brujas.member(ident)) {
         error = TipoError::BRUJA_NO_EXISTE;
-    } else if (brujas.find(ident)->getHechizosAprendidos().esVacia()) {
+    } else if (brujas.find(ident)->getHechizosAprendidos()->esVacia()) {
         error = TipoError::NO_HAY_HECHIZOS_REGISTRADOS;
     } else {
         cantidadHechizos = brujas.cantidadHechizosEspecialesDesarrolladosEnAnio(ident, anio);
@@ -102,13 +108,12 @@ Hechizo *CapaLogica::listarHechizo(String ident, int numHechizo, TipoError &erro
         error = TipoError::DICCIONARIO_BRUJAS_VACIO;
     else if (!brujas.member(ident))
         error = TipoError::BRUJA_NO_EXISTE;
-    else if (!brujas.find(ident)->getHechizosAprendidos().existeHechizo(numHechizo))
+    else if (!brujas.find(ident)->getHechizosAprendidos()->existeHechizo(numHechizo))
         error = TipoError::HECHIZO_NO_EXISTE;
     else
         printf("llego ****************");
 
-    hechizo = brujas.find(ident)->getHechizosAprendidos().ksimo(numHechizo);
+    hechizo = brujas.find(ident)->getHechizosAprendidos()->ksimo(numHechizo);
 
     return hechizo;
 }
-

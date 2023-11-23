@@ -11,6 +11,8 @@ class CapaLogica {
         Brujas brujas;
 
     public:
+        CapaLogica();
+
         //R1 = Alta de bruja Suprema
         void registrarBrujaSuprema(Suprema *sup, TipoError &error);
 
