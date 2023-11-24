@@ -18,11 +18,15 @@ int main() {
     TipoError error;
     Menu menu;
 
+
     do {
-        cout << "Por favor selecciona una opcion a continuacion: \n 1) Registrar Bruja Suprema\n 2) Registrar Bruja Comun\n 3) Listar Brujas Alfabeticamente\n 4) Listar detalles de Bruja\n 5) Listar Bruja Suprema mas antigua\n 6) Registrar Hechizo en Bruja\n 7) Listar Hechizo segun su numero\n 8) Listar cantidad de hechizos especiales en un anio dado\n 9) Salir\n" << endl;
+        cout << "Por favor selecciona una opcion a continuacion: \n -1) Cargar datos de prueba \n 1) Registrar Bruja Suprema\n 2) Registrar Bruja Comun\n 3) Listar Brujas Alfabeticamente\n 4) Listar detalles de Bruja\n 5) Listar Bruja Suprema mas antigua\n 6) Registrar Hechizo en Bruja\n 7) Listar Hechizo segun su numero\n 8) Listar cantidad de hechizos especiales en un anio dado\n 9) Salir\n" << endl;
         opcionMenu.scan();
 
-        if (opcionMenu == "1") {
+        if (opcionMenu == "-1"){
+            menu.cargarDatosDePrueba(capaLogica);
+            cout << "\nDatos cargados correctamente." << endl;
+        }else if (opcionMenu == "1") {
             cout << "\nIngrese identificador para la bruja:" << endl;
             identificador.scan();
 
