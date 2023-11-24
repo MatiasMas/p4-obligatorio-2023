@@ -1,13 +1,7 @@
-//
-// Created by User on 14/11/2023.
-//
-
-
 #include "Fecha.h"
 
 void Fecha::incrementar() {
     switch (mm) {
-
         case 1:
         case 3:
         case 5:
@@ -52,7 +46,6 @@ void Fecha::incrementar() {
             }
     }
 }
-
 
 Fecha::Fecha() {
     aa = 9999;
@@ -173,7 +166,6 @@ bool Fecha::esValida() {
 
     return es;
 }
-
 
 Fecha::~Fecha() {
 

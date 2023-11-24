@@ -1,5 +1,4 @@
 #include "Suprema.h"
-#include <iostream>
 
 Suprema::Suprema(String ident, String nom, Fecha fecNac, int cantPoderes) : Bruja(ident, nom), fechaNacimiento(fecNac) {
     cantidadPoderes = cantPoderes;
@@ -26,7 +25,7 @@ TipoBruja Suprema::getTipo() {
 }
 
 int Suprema::calcularPuntosDePoder() {
-    HechizosAprendidos* hechizosAprendidos = getHechizosAprendidos();
+    HechizosAprendidos *hechizosAprendidos = getHechizosAprendidos();
     int cantidadEspeciales = hechizosAprendidos->cantidadEspeciales();
     int cantidadComunes = hechizosAprendidos->largoHechizos() - cantidadEspeciales;
     int anioNacimiento = fechaNacimiento.getAnio();

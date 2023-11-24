@@ -42,12 +42,12 @@ String String::operator=(const String &otro) {
 
 /// == OPERADOR DE COMPARACION
 bool String::operator==(String otro) {
-    return (bool)(strcmp(cadena, otro.cadena) == 0);
+    return (bool) (strcmp(cadena, otro.cadena) == 0);
 }
 
 /// <  COMPARACION ALFABETICA
 bool String::operator<(String otro) {
-    return (bool)(strcmp(cadena, otro.cadena) < 0);
+    return (bool) (strcmp(cadena, otro.cadena) < 0);
 
 }
 
@@ -87,9 +87,9 @@ void String::print() {
 
 String String::convertirIntAString(int num) {
     std::string str = std::to_string(num);
-    const char* cstr = str.c_str();
+    const char *cstr = str.c_str();
 
-    String numHechizoString = String((char*)cstr);
+    String numHechizoString = String((char *) cstr);
 
     return numHechizoString;
 }
@@ -100,7 +100,7 @@ int String::convertirStringAInt() {
     int suma = 0;
     i = 0;
 
-    while (cadena[i] != '\0'){
+    while (cadena[i] != '\0') {
         digito = cadena[i] - 48;
         suma = (suma * 10) + digito;
         i++;

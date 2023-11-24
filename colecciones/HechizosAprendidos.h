@@ -25,9 +25,9 @@ class HechizosAprendidos {
 
         bool estaLleno();
 
-        Hechizo* ksimo(int k);
+        Hechizo *ksimo(int k);
 
-        Iterador* listarHechizos();
+        Iterador *listarHechizos();
 
         bool existeHechizo(int hechizoNum);
 
@@ -35,6 +35,5 @@ class HechizosAprendidos {
 
         ~HechizosAprendidos();
 };
-
 
 #endif

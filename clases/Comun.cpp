@@ -1,10 +1,6 @@
-//
-// Created by User on 14/11/2023.
-//
-
 #include "Comun.h"
 
-Comun::Comun(String ident, String nom, String reg, bool vuela, Suprema *sup) : Bruja(ident, nom), regionOrigen(reg), suprema(sup)  {
+Comun::Comun(String ident, String nom, String reg, bool vuela, Suprema *sup) : Bruja(ident, nom), regionOrigen(reg), suprema(sup) {
     vuelaEscoba = vuela;
 }
 
@@ -37,13 +33,13 @@ TipoBruja Comun::getTipo() {
 }
 
 int Comun::calcularPuntosDePoder() {
-    HechizosAprendidos* hechizosAprendidos = getHechizosAprendidos();
+    HechizosAprendidos *hechizosAprendidos = getHechizosAprendidos();
     int cantidadEspeciales = hechizosAprendidos->cantidadEspeciales();
     int cantidadComunes = hechizosAprendidos->largoHechizos() - cantidadEspeciales;
 
     int cantidadPuntos = (cantidadComunes * 1) + (cantidadEspeciales * 2);
 
-    if (regionOrigen == "SALEM"){
+    if (regionOrigen == "SALEM") {
         cantidadPuntos++;
     }
 
@@ -54,7 +50,7 @@ String Comun::generarString() {
     String datos = Bruja::generarString();
     String vuelaEnEscoba;
 
-    if(vuelaEscoba)
+    if (vuelaEscoba)
         vuelaEnEscoba = "Si";
     else
         vuelaEnEscoba = "No";

@@ -4,7 +4,6 @@ Brujas::Brujas() {
     ABB = NULL;
 }
 
-
 void Brujas::destruirArbol(Nodo *&a) {
     if (a != NULL) {
         destruirArbol(a->hizq);
@@ -120,8 +119,8 @@ void Brujas::buscarBrujaMasAntiguaRecursivo(Brujas::Nodo *abb, String &identSup,
     if (abb != nullptr) {
 
         if (abb->info->getTipo() == TipoBruja::SUPREMA) {
-            if (((Suprema *)abb->info)->getFechaNacimiento() < fechaMasAntigua){
-                fechaMasAntigua = ((Suprema *)abb->info)->getFechaNacimiento();
+            if (((Suprema *) abb->info)->getFechaNacimiento() < fechaMasAntigua) {
+                fechaMasAntigua = ((Suprema *) abb->info)->getFechaNacimiento();
                 identSup = abb->info->getIdentificador();
             }
         }

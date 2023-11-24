@@ -1,5 +1,4 @@
 #include "Hechizo.h"
-#include <string>
 
 Hechizo::Hechizo(String txt) : texto(txt) {
     numero = 0;

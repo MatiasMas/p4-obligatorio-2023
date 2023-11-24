@@ -26,5 +26,4 @@ class Especial : public Hechizo {
         ~Especial();
 };
 
-
 #endif

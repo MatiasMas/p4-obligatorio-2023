@@ -1,10 +1,5 @@
-//
-// Created by User on 14/11/2023.
-//
-
 #ifndef OBLIGATORIO2023AMS_COMUN_H
 #define OBLIGATORIO2023AMS_COMUN_H
-
 
 #include "Bruja.h"
 #include "Suprema.h"
@@ -39,5 +34,4 @@ class Comun : public Bruja {
         ~Comun();
 };
 
-
-#endif //OBLIGATORIO2023AMS_COMUN_H
+#endif

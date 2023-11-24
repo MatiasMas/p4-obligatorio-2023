@@ -1,7 +1,6 @@
 #ifndef OBLIGATORIO2023AMS_BRUJA_H
 #define OBLIGATORIO2023AMS_BRUJA_H
 
-
 #include "../datos/String.h"
 #include "../colecciones/HechizosAprendidos.h"
 #include "Hechizo.h"
@@ -21,7 +20,7 @@ class Bruja {
 
         String getNombre();
 
-        HechizosAprendidos* getHechizosAprendidos();
+        HechizosAprendidos *getHechizosAprendidos();
 
         void setNombre(String nom);
 
@@ -42,5 +41,4 @@ class Bruja {
         virtual ~Bruja();
 };
 
-
-#endif //OBLIGATORIO2023AMS_BRUJA_H
+#endif

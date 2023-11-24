@@ -1,6 +1,5 @@
 #include "Bruja.h"
 #include "Especial.h"
-#include <iostream>
 
 Bruja::Bruja(String ident, String nom) : identificador(ident), nombre(nom), hechizosAprendidos() {
 }

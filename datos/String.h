@@ -1,7 +1,6 @@
 #ifndef OBLIGATORIO2023AMS_STRING_H
 #define OBLIGATORIO2023AMS_STRING_H
 
-
 const int MAX = 80;
 
 class String {
@@ -34,5 +33,4 @@ class String {
         int convertirStringAInt();
 };
 
-
-#endif //OBLIGATORIO2023AMS_STRING_H
+#endif

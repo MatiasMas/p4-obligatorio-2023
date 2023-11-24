@@ -1,7 +1,6 @@
 #ifndef OBLIGATORIO2023AMS_ITERADOR_H
 #define OBLIGATORIO2023AMS_ITERADOR_H
 
-
 #include "../datos/String.h"
 
 class Iterador {
@@ -25,6 +24,5 @@ class Iterador {
 
         ~Iterador();
 };
-
 
 #endif

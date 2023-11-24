@@ -29,5 +29,4 @@ class Suprema : public Bruja {
         ~Suprema();
 };
 
-
 #endif

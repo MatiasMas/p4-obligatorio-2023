@@ -40,11 +40,11 @@ class Brujas {
 
         void insertBrujaComun(Comun *comun, String identSup);
 
-        Iterador* listarBrujas();
+        Iterador *listarBrujas();
 
-        Bruja* listarDetallesBruja(String idBruja, int &puntosDePoder);
+        Bruja *listarDetallesBruja(String idBruja, int &puntosDePoder);
 
-        Bruja* listarBrujaSupremaMasAntigua();
+        Bruja *listarBrujaSupremaMasAntigua();
 
         int cantidadHechizosEspecialesDesarrolladosEnAnio(String ident, int anio);
 

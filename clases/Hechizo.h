@@ -27,5 +27,4 @@ class Hechizo {
         ~Hechizo();
 };
 
-
 #endif

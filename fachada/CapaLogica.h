@@ -38,5 +38,4 @@ class CapaLogica {
         int cantidadHechizosEspecialesEnAnio(String ident, int anio, TipoError &error);
 };
 
-
 #endif

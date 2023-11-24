@@ -17,4 +17,4 @@ enum class TipoError : int {
     OPCION_NO_VALIDA
 };
 
-#endif // TIPOERROR_H
+#endif

@@ -73,8 +73,8 @@ Bruja *CapaLogica::listarBrujaSupremaMasAntigua(TipoError &error) {
 void CapaLogica::registrarHechizoEnBruja(String ident, Hechizo *hechizo, TipoError &error) {
     error = TipoError::SIN_ERROR;
 
-    Bruja* bruja = brujas.find(ident);
-    HechizosAprendidos* hechizosAprendidos = bruja->getHechizosAprendidos();
+    Bruja *bruja = brujas.find(ident);
+    HechizosAprendidos *hechizosAprendidos = bruja->getHechizosAprendidos();
     bool lleno = hechizosAprendidos->estaLleno();
 
     if (!brujas.member(ident))

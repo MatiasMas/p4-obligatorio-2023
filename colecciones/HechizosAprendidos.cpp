@@ -33,7 +33,7 @@ Iterador *HechizosAprendidos::listarHechizos() {
     Iterador *iterador = new Iterador();
 
     for (int i = 0; i < hechizos.tope; ++i) {
-        String* strAux = new String(hechizos.arre[i]->generarString());
+        String *strAux = new String(hechizos.arre[i]->generarString());
 
         iterador->insertar(strAux);
     }
