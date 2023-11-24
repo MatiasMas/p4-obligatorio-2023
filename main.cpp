@@ -6,6 +6,7 @@
 #include "clases/Suprema.h"
 #include "clases/Especial.h"
 #include "clases/Comun.h"
+#include "menu/Menu.h"
 
 using namespace std;
 
@@ -15,29 +16,27 @@ int main() {
     bool boolAux;
     int puntosPoder;
     TipoError error;
+    Menu menu;
 
     do {
         cout << "Por favor selecciona una opcion a continuacion: \n 1) Registrar Bruja Suprema\n 2) Registrar Bruja Comun\n 3) Listar Brujas Alfabeticamente\n 4) Listar detalles de Bruja\n 5) Listar Bruja Suprema mas antigua\n 6) Registrar Hechizo en Bruja\n 7) Listar Hechizo segun su numero\n 8) Listar cantidad de hechizos especiales en un anio dado\n 9) Salir\n" << endl;
         opcionMenu.scan();
 
         if (opcionMenu == "1") {
-            cout << "Ingrese identificador para la bruja:" << endl;
+            cout << "\nIngrese identificador para la bruja:" << endl;
             identificador.scan();
 
-            cout << "Ingrese nombre para la bruja:" << endl;
+            cout << "\nIngrese nombre para la bruja:" << endl;
             nombre.scan();
 
-            cout << "Ingrese dia de nacimiento de la bruja:" << endl;
+            cout << "\nIngrese dia de nacimiento de la bruja:" << endl;
             dia.scan();
 
-            cout << "Ingrese mes de nacimiento de la bruja:" << endl;
+            cout << "\nIngrese mes de nacimiento de la bruja:" << endl;
             mes.scan();
 
-            cout << "Ingrese anio de nacimiento de la bruja:" << endl;
+            cout << "\nIngrese anio de nacimiento de la bruja:" << endl;
             anio.scan();
-
-            cout << "Ingrese cantidad de poderes de la bruja:" << endl;
-            cantPoderes.scan();
 
             int diaInt = dia.convertirStringAInt();
             int mesInt = mes.convertirStringAInt();
@@ -46,82 +45,98 @@ int main() {
 
             Fecha fecNac = Fecha(diaInt, mesInt, anioInt);
 
-//            if (!fecNac.esValida()) return -10; ->> No anda bien el metodo
+            if (!fecNac.esValida()) {
+                menu.mostrarMensajeDeError(TipoError::FECHA_NO_VALIDA);
+            } else {
+                cout << "\nIngrese cantidad de poderes de la bruja:" << endl;
+                cantPoderes.scan();
 
-            Suprema* suprema = new Suprema(identificador, nombre, fecNac, cantPoderesInt);
+                Suprema* suprema = new Suprema(identificador, nombre, fecNac, cantPoderesInt);
 
-            capaLogica->registrarBrujaSuprema(suprema, error);
+                capaLogica->registrarBrujaSuprema(suprema, error);
+
+                menu.mostrarMensajeDeError(error);
+            }
 
         } else if (opcionMenu == "2") {
 
-            cout << "Ingrese identificador para la bruja:" << endl;
+            cout << "\nIngrese identificador para la bruja:" << endl;
             identificador.scan();
 
-            cout << "Ingrese nombre para la bruja:" << endl;
+            cout << "\nIngrese nombre para la bruja:" << endl;
             nombre.scan();
 
-            cout << "Ingrese region de origen de la bruja:" << endl;
+            cout << "\nIngrese region de origen de la bruja:" << endl;
             regionOrigen.scan();
 
-            cout << "Confirme si la bruja vuela, SI o NO:" << endl;
+            cout << "\nConfirme si la bruja vuela, SI o NO:" << endl;
             vuelaEscoba.scan();
 
-            cout << "Ingrese identificador de la Bruja Suprema que supervisa:" << endl;
-            idSuprema.scan();
-
-              if (vuelaEscoba == "SI"  ||  vuelaEscoba == "si"  ||  vuelaEscoba == "Si" ) {
+            if (vuelaEscoba == "SI"  ||  vuelaEscoba == "si"  ||  vuelaEscoba == "Si" ) {
                 boolAux = true;
             } else if (vuelaEscoba == "NO"  ||  vuelaEscoba == "no"  ||  vuelaEscoba == "No" ) {
                 boolAux = false;
             } else {
-                return -20;
+                menu.mostrarMensajeDeError(TipoError::OPCION_NO_VALIDA);
+                continue;
             }
+
+            cout << "\nIngrese identificador de la Bruja Suprema que supervisa:" << endl;
+            idSuprema.scan();
 
             Comun* comun = new Comun(identificador, nombre, regionOrigen, boolAux, nullptr);
 
             capaLogica->registrarBrujaComun(comun, idSuprema, error);
 
+            menu.mostrarMensajeDeError(error);
+
         } else if (opcionMenu == "3") {
 
             Iterador* iterador = capaLogica->listarBrujasAlfabeticamente(error);
 
-            if (iterador == nullptr) return -30;
-
-            while (iterador->hayMasObjetos()) {
-                iterador->proximoObjeto()->print();
+            if (iterador == nullptr) {
+                menu.mostrarMensajeDeError(error);
+            } else {
+                while (iterador->hayMasObjetos()) {
+                    iterador->proximoObjeto()->print();
+                }
             }
 
         } else if (opcionMenu == "4") {
 
-            cout << "Ingrese identificador de la bruja que quiere los detalles:" << endl;
+            cout << "\nIngrese identificador de la bruja que quiere los detalles:" << endl;
             identificador.scan();
 
             Bruja* bruja = capaLogica->listarDetallesBruja(identificador, puntosPoder, error);
 
-            if (bruja == nullptr) return -40;
+            if (bruja == nullptr) {
+                menu.mostrarMensajeDeError(error);
+            } else {
+                bruja->generarString().print();
 
-            bruja->generarString().print();
-
-            cout << "Los puntos de poder de la bruja son: " << puntosPoder << endl;
+                cout << "\nLos puntos de poder de la bruja son: " << puntosPoder << endl << "\n";
+            }
 
         } else if (opcionMenu == "5") {
 
             Bruja* bruja = capaLogica->listarBrujaSupremaMasAntigua(error);
 
-            if (bruja == nullptr) return -50;
-
-            bruja->generarString().print();
+            if (bruja == nullptr) {
+                menu.mostrarMensajeDeError(error);
+            } else {
+                bruja->generarString().print();
+            }
 
         } else if (opcionMenu == "6") {
             Hechizo* hechizo;
 
-            cout << "Ingrese identificador de la bruja a la que le quiere asignar el hechizo:" << endl;
+            cout << "\nIngrese identificador de la bruja a la que le quiere asignar el hechizo:" << endl;
             identificador.scan();
 
-            cout << "Ingrese texto del hechizo:" << endl;
+            cout << "\nIngrese texto del hechizo:" << endl;
             textoHechizo.scan();
 
-            cout << "El hechizo es especial? SI o NO:" << endl;
+            cout << "\nEl hechizo es especial? SI o NO:" << endl;
             esHechizoEspecial.scan();
 
             if (esHechizoEspecial == "SI" ||  esHechizoEspecial== "si"  ||  esHechizoEspecial == "Si" ) {
@@ -129,14 +144,15 @@ int main() {
             } else if (esHechizoEspecial == "NO" ||  esHechizoEspecial== "no"  ||  esHechizoEspecial == "No" ) {
                 boolAux = false;
             } else {
-                return -60;
+                menu.mostrarMensajeDeError(TipoError::OPCION_NO_VALIDA);
+                continue;
             }
 
             if (boolAux) {
-                cout << "Ingrese anio de manifiesto del hechizo:" << endl;
+                cout << "\nIngrese anio de manifiesto del hechizo:" << endl;
                 anio.scan();
 
-                cout << "Ingrese una descripcion del hechizo especial:" << endl;
+                cout << "\nIngrese una descripcion del hechizo especial:" << endl;
                 descripcionHechizo.scan();
 
                 int anioInt = anio.convertirStringAInt();
@@ -148,37 +164,44 @@ int main() {
 
             capaLogica->registrarHechizoEnBruja(identificador, hechizo, error);
 
+            menu.mostrarMensajeDeError(error);
+
         } else if (opcionMenu == "7") {
 
-            cout << "Ingrese identificador de la bruja:" << endl;
+            cout << "\nIngrese identificador de la bruja:" << endl;
             identificador.scan();
 
-            cout << "Ingrese el numero del hechizo que quiere listar:" << endl;
+            cout << "\nIngrese el numero del hechizo que quiere listar:" << endl;
             numHechizo.scan();
 
             int numHechizoInt = numHechizo.convertirStringAInt();
 
             Hechizo* hechizo = capaLogica->listarHechizo(identificador, numHechizoInt, error);
 
-            if (hechizo == nullptr) return -70;
-
-            hechizo->generarString().print();
+            if (hechizo == nullptr) {
+                menu.mostrarMensajeDeError(error);
+            } else {
+                hechizo->generarString().print();
+            }
 
         } else if (opcionMenu == "8") {
 
-            cout << "Ingrese identificador de la bruja:" << endl;
+            cout << "\nIngrese identificador de la bruja:" << endl;
             identificador.scan();
 
-            cout << "Ingrese el anio para el que quiere contabilizar los hechizos:" << endl;
+            cout << "\nIngrese el anio para el que quiere contabilizar los hechizos:" << endl;
             anio.scan();
 
             int anioInt = anio.convertirStringAInt();
 
             int cantidadEspeciales = capaLogica->cantidadHechizosEspecialesEnAnio(identificador, anioInt, error);
 
-            if (cantidadEspeciales == 0) return -80;
+            if (cantidadEspeciales == 0) {
+                menu.mostrarMensajeDeError(error);
+            } else {
+                cout << "\nEl numero de hechizos especiales de la bruja es: " << cantidadEspeciales << endl;
+            }
 
-            cout << "El numero de hechizos especiales de la bruja es: " << cantidadEspeciales << endl;
         } else if (opcionMenu == "9") {
             cout << "\nQue tenga un buen dia." << endl;
 

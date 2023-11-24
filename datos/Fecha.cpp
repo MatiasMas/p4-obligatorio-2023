@@ -140,39 +140,37 @@ int Fecha::operator-(Fecha f) {
 }
 
 bool Fecha::esValida() {
-    bool es= false;
-    switch (mm)
-    {
-    case 1 :
-    case 3 :
-    case 5 :
-    case 7 :
-    case 8 :
-    case 10 :
-    case 12 :
-        if ( dd >= 1 && dd <= 31 )
-            es =true;
-        break;
-    case 4 :
-    case 6 :
-    case 9 :
-    case 11 :
-        if ( dd >= 1 && dd <= 30 )
-            es = true;
-        break;
-    case 2 :
-        if( (aa % 4 == 0 && aa % 100 != 0) || (aa % 400 == 0) )
-        {
-            if ( dd >= 1 && dd<= 29 )
+    bool es = false;
+
+    switch (mm) {
+        case 1 :
+        case 3 :
+        case 5 :
+        case 7 :
+        case 8 :
+        case 10 :
+        case 12 :
+            if (dd >= 1 && dd <= 31)
                 es = true;
-        }
-        else
-        {
-            if ( dd >= 1 && dd<= 28 )
+            break;
+        case 4 :
+        case 6 :
+        case 9 :
+        case 11 :
+            if (dd >= 1 && dd <= 30)
                 es = true;
-        }
-        break;
+            break;
+        case 2 :
+            if ((aa % 4 == 0 && aa % 100 != 0) || (aa % 400 == 0)) {
+                if (dd >= 1 && dd <= 29)
+                    es = true;
+            } else {
+                if (dd >= 1 && dd <= 28)
+                    es = true;
+            }
+            break;
     }
+
     return es;
 }
 
